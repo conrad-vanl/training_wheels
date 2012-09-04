@@ -9,7 +9,7 @@ module TrainingWheels
 		def evaluate(scope, locals, &block)
 			template_path = TemplatePath.new(scope)
 
-			"Ember.TEMPLATES[#{template_path.name.inspect}] = Ember.Handlebars.compile(#{data.inspect})"
+			"Ember.TEMPLATES[#{template_path.name}] = Ember.Handlebars.compile(#{data.inspect})"
 		end
 
 		protected
@@ -22,12 +22,8 @@ module TrainingWheels
 				self.template_path = scope.logical_path
 			end
 
-			def is_partial?
-				template_path.gsub(%r{.*/}, '').start_with?('_')
-			end
-
 			def name
-				is_partial? ? partial_name : template_name
+				template_name
 			end
 
 			private
@@ -39,11 +35,7 @@ module TrainingWheels
 			end
 
 			def relative_path
-				template_path.gsub(/^#{HandlebarsAssets::Config.path_prefix}\/(.*)$/i, "\\1")
-			end
-
-			def partial_name
-				forced_underscore_name.gsub(/\//, '_').gsub(/__/, '_').dump
+				template_path.gsub(/^#{TrainingWheels::Config.path_prefix}\/(.*)$/i, "\\1")
 			end
 
 			def template_name

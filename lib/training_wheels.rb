@@ -1,7 +1,8 @@
 require "training_wheels/version"
 
 module TrainingWheels
-  autoload(:TiltHandlebars, 'trainingwheels/tilt_handlebars')
+  autoload(:TiltHandlebars, 'training_wheels/tilt_handlebars')
+  autoload(:Config, 'training_wheels/config')
 
   if defined?(Rails) && defined?(::Rails::Engine)
     require 'training_wheels/engine'

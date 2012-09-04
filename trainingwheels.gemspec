@@ -3,11 +3,11 @@ $:.push File.expand_path("../lib", __FILE__)
 require "training_wheels/version"
 
 Gem::Specification.new do |s|
-  s.name        = "training_wheels"
+  s.name        = "trainingwheels"
   s.version     = TrainingWheels::VERSION
   s.authors     = ["Conrad VanLandingham"]
   s.email       = ["conrad@landdolph.in"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/convandesign/training_wheels"
   s.summary     = "A simple Sprockets engine that puts training wheels on your Handlebar templates (wraps them up and adds them to Ember's global TEMPLATE variable)"
   s.description = "A simple Sprockets engine that puts training wheels on your Handlebar templates (wraps them up and adds them to Ember's global TEMPLATE variable)"
 

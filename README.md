@@ -16,7 +16,7 @@ App.NewAuthView = Ember.View.extend({
 ```
 
 ## How to use/install:
-Simply install the gem (training_wheels) or include it in your gemfile.
+Simply install the gem (trainingwheels) or include it in your gemfile.
 
 Now you just need to use the "require" or "require_tree" Sprockets directive to load your templates:
 

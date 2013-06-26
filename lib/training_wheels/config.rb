@@ -8,7 +8,8 @@ module TrainingWheels
 		end
 
     def include_path?
-      @include_path || true
+      return @include_path if defined? @include_path
+      true
     end
 	end
 end

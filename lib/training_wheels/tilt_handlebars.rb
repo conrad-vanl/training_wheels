@@ -49,7 +49,11 @@ module TrainingWheels
 			end
 
 			def relative_path
-				template_path.gsub(/^#{TrainingWheels::Config.path_prefix}\/(.*)$/i, "\\1")
+				if TrainingWheels::Config.include_path?
+					template_path.gsub(/^#{TrainingWheels::Config.path_prefix}\/(.*)$/i, "\\1")
+				else
+					File.basename(template_path)
+				end
 			end
 
 			def partial_name

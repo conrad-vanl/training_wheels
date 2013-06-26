@@ -6,5 +6,9 @@ module TrainingWheels
 		def path_prefix
 			@path_prefix || 'templates'
 		end
+
+    def include_path?
+      @include_path || true
+    end
 	end
 end
